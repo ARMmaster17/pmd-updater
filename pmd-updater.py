@@ -17,7 +17,7 @@ def is_deprecate_warning(line):
 
 def main():
     if len(sys.argv) != 3:
-        raise ValueError('Script requires two arguments.')
+        raise ValueError('Script requires two arguments. Ex: "./pmd-updater.py [ruleset file path] [pmd console output dump]"')
     os.rename(sys.argv[1], f"{sys.argv[1]}.old")
     ruleset_file = open(f"{sys.argv[1]}.old", 'r').readlines()
     warning_file = open(sys.argv[2], 'r')
